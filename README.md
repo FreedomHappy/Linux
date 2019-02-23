@@ -4,9 +4,9 @@ Linux learn
 ### DIY shell tutorial
 [Tutorial - Write a Shell in C](https://brennan.io/2015/01/16/write-a-shell-in-c/)
 
-[wshell](https://www.cnblogs.com/wuyuegb2312/p/3399566.html)  [wshell code](https://github.com/vvy/wshell)
+[wshell](https://www.cnblogs.com/wuyuegb2312/p/3399566.html)  [code](https://github.com/vvy/wshell)
 
-[StupidShell](https://www.tomorrow.wiki/archives/174)  [StupidShell code](https://github.com/Second-TOMORROW/StupidShell)
+[StupidShell](https://www.tomorrow.wiki/archives/174)  [code](https://github.com/Second-TOMORROW/StupidShell)
 
 [Making your own Linux Shell in C   --geeksforgeeks](https://www.geeksforgeeks.org/making-linux-shell-c/)
 
