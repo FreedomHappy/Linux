@@ -1,10 +1,14 @@
 # Linux
 Linux learn 
 ## Shell
-### DIY shell example
-[wshell](https://github.com/vvy/wshell)
+### DIY shell tutorial
+[Tutorial - Write a Shell in C](https://brennan.io/2015/01/16/write-a-shell-in-c/)
 
-[StupidShell](https://github.com/Second-TOMORROW/StupidShell)
+[wshell](https://www.cnblogs.com/wuyuegb2312/p/3399566.html)[wshell code](https://github.com/vvy/wshell)
+
+[StupidShell](https://www.tomorrow.wiki/archives/174)[StupidShell code](https://github.com/Second-TOMORROW/StupidShell)
+
+[Making your own Linux Shell in C   --geeksforgeeks](https://www.geeksforgeeks.org/making-linux-shell-c/)
 
 ## Makefile&&Autotools
 ### project example
