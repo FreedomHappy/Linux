@@ -1,5 +1,11 @@
 # Linux
 Linux learn 
+## VPS 使用
+### 阿里云VPS
+install jdk and Tomcat8 references:
+[Justin --How To Install Apache Tomcat 8 on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04)
+
+[Michelle Almendarez --How To Install Apache Tomcat 8 on Ubuntu 16.04](https://www.liquidweb.com/kb/install-apache-tomcat-8-ubuntu-16-04/)
 ## Shell
 ### DIY shell tutorial
 [Tutorial - Write a Shell in C](https://brennan.io/2015/01/16/write-a-shell-in-c/)
