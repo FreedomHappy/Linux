@@ -1,5 +1,8 @@
 # Linux
-Linux learn 
+Linux learn site
+* [鸟哥的私房菜](http://linux.vbird.org/)
+
+* [LinuxTOY](https://linuxtoy.org/)
 ## VPS 使用
 ### 阿里云VPS
 install jdk and Tomcat8 references:
