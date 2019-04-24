@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo -n caculate 1+2+...+n,n=
+read n
+number=0
+sum=0
+while [ $number -le $n ]
+do
+ 	number=$(($number+1))
+	echo $number
+	sum=$(($sum+$number))
+done
+echo sum=$sum

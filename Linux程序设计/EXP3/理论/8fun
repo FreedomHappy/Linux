@@ -1,0 +1,13 @@
+#!/bin/sh
+
+
+finddir(){
+	echo $(ls -l ${1:-.}|grep "^d")
+}
+
+echo -n dir=
+read dir
+
+echo $(finddir "$dir")
+
+

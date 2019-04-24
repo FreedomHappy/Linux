@@ -1,0 +1,22 @@
+#!/bin/sh
+
+echo "是否选修了linux课程？"
+echo -n "Please answer yes or no:"
+read answer
+while :
+do
+case "$answer" in
+	[Yy] | [Yy][Ee][Ss] )
+		echo "ok!"
+		break
+		;;
+	[Nn] | [Nn][Oo] )
+		echo "never mind"
+		break
+		;;
+	* )
+		echo "sorry ,try again"
+		read answer
+esac
+done
+exit 0

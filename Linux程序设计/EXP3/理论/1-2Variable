@@ -1,0 +1,31 @@
+
+#!/bin/sh
+
+echo 1.环境变量
+echo '$HOME' $HOME
+echo '$PATH' $PATH
+echo '$PS1'   $PS1
+echo '$PS2'   $PS2
+echo '$PWD'  $PWD
+echo '$IFS'  $IFS
+
+
+set first second
+echo 2.位置变量
+echo '$#'    $#
+echo '$$'    $$
+echo '$0'    $0
+echo '$1'    $1
+echo '$2'    $2
+echo '$*'    $*
+echo '$@'    $@
+
+echo change IFS=''
+IFS=''
+echo '$*'    $*
+echo '$@'    $@
+echo unset  IFS
+unset IFS
+echo '$*'    $*
+
+exit 0

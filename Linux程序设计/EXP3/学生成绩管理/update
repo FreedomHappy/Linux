@@ -1,0 +1,33 @@
+#!/bin/sh
+
+pathfile="./StuInfo"
+echo -n 输入要修改的记录的学号：
+read stuID
+while :
+do
+	if [ -z $stuID ] 
+	then
+		echo -n 输入为空，请重新输入：
+                read stuID
+	
+	else
+		res=$(cat $pathfile | cut -d ',' -f 1| grep "$stuID" $pathfile)
+		# echo $res
+                echo res $res
+		if [ -z $res ]
+                then
+                        echo -n 无此记录，请重新输入：
+                        read stuID
+                else
+			echo stuID,stuName,schoolID,explain
+			echo $res
+			echo 请输入修改后的记录:
+			read record
+			sed -i "s/$res/$record/" $pathfile
+			echo 修改成功:$record
+			break
+                fi
+	fi
+done
+
+exit 0

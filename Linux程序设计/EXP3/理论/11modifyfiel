@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo 请指定路径
+read path
+for txtf in $(find $path -name "*.txt")
+do
+	mv $txtf $(echo $txtf|cut -d '/' -f 2|cut -d '.' -f 1).doc 
+done 

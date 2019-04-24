@@ -1,0 +1,9 @@
+#!/bin/sh
+foo(){ 
+	echo "$1"
+}
+
+foo "var"
+result="$(foo "var")"
+
+echo result $result

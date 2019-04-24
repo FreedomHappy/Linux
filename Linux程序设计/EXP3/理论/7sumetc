@@ -1,0 +1,8 @@
+
+#!/bin/sh
+
+filenum=$(ls -l /etc|grep "^-"|wc -l)
+dirnum=$(ls -l /etc|grep "^d"|wc -l)
+
+echo /etc filenum=$filenum
+echo /etc dirnum=$dirnum

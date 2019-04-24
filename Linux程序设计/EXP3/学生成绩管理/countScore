@@ -1,0 +1,33 @@
+#!/bin/sh
+
+pathfile="./StuscoreInfo"
+tempfile="./tempfile"
+echo ======每个学生总成绩======
+> $tempfile
+cut -d',' -f1 $pathfile | sort | uniq | while read line
+do
+	if [ -n $line ]
+	then
+		echo -n $line 学生
+		score=$(grep $line $pathfile | cut -d',' -f4 | awk '{sum+=$1}END{print sum}')
+		name=$(grep $line $pathfile | cut -d',' -f2| uniq)
+		echo $name total=$score
+		echo $line,$name,$score >> $tempfile
+	else
+		break
+	fi
+done
+
+echo ======总成绩排名前5的学生======
+sort -t ',' -k3 -nr $tempfile | head -n 5
+
+
+echo =====各科成绩前3名======
+cut -d',' -f3 $pathfile | sort | uniq | while read line
+do
+	echo ""
+	echo ----$line 前3----	
+       	grep $line $pathfile | sort -t ',' -k4 -nr | head -n 3
+done
+
+exit 0

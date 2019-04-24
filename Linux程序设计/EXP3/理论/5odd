@@ -1,0 +1,13 @@
+#!/bin/sh
+
+number=0
+while [ $number -le 50 ]
+do
+if [ $(($number % 2)) -eq 1 ]
+then
+	echo $number 
+
+fi
+	number=$(($number+1))
+
+done

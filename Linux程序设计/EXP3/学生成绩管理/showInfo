@@ -1,0 +1,58 @@
+#!/bin/sh
+
+echo 选择要显示的表格，a.SchoolInfo, b.StuInfo, c.StuscoreInfo, q. exit
+read select
+while :
+do
+case "$select" in
+        a | A )
+                file=a
+                break
+                ;;
+        b | B )
+                file=b
+                break
+                ;;
+        c | C)
+                file=c
+                break
+                ;;
+	q ) 
+		exit 0
+		;;
+	* ) 
+esac
+done
+
+showtable(){
+        cat $path | uniq | while read LINE
+        do
+                if [ -n $LINE ]
+                then
+                        echo $LINE 
+                else
+                        break
+                fi
+        done
+
+}
+case "$file" in
+	a )
+		echo ========SchoolInfo=======
+		echo schoolID,schoolName
+		path="./SchoolInfo"
+		showtable
+		;;
+	b )
+		echo ======StuInfo============
+		echo stuID,stuName,schoolID,explain
+		path="./StuInfo"
+		showtable
+		;;
+	c )
+		echo ======StuscoreInfo=======
+		echo stuID,stuName,subject,score,explain
+		path="./StuscoreInfo"
+		showtable
+		;;
+esac

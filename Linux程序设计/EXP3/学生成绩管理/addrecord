@@ -1,0 +1,110 @@
+#!/bin/sh
+
+echo 选择添加的文件:a. SchoolInfo, b. StuInfo, c. StuscoreInfo, q. exit
+read select
+while :
+do
+case "$select" in
+	a ) 
+		echo 选定SchoolInfo
+		file=a
+		break
+		;;
+	b ) 
+		echo 选定StuInfo
+		file=b
+		break
+		;;
+        c ) 
+		echo 选定StusocreInfo
+		file=c
+		break
+		;;
+	q )
+		exit 0
+		;;
+	* ) 
+		echo -n 输入错误，请重新输入
+		read select
+		;;
+
+esac
+done
+
+echo $file
+
+# 定义输入记录函数
+inputs(){
+while :
+do		
+	echo -n "$1":
+	read var
+ 	if [ -z "$var" ]
+        then
+        	echo -n 输入为空请重新输入，"$1":
+		read var
+        else
+        	break
+        fi
+done
+}
+
+
+while :
+do
+case $file in
+	a ) 
+		echo -n 请为SchoolInfo添加记录,
+		echo 学院编号 学院名称
+		inputs "schoolID"
+		schoolID=$var
+		inputs "schoolName"
+		schoolName=$var
+		echo $schoolID,$schoolName >> SchoolInfo 
+		;;
+	b )
+		echo 请为StuInfo添加记录
+		echo 学号 学生姓名 所在学院编号 说明（none,suspended,dropout）
+		inputs "stuID"
+	        stuID=$var
+		inputs "stuName"
+		stuName=$var
+		inputs "schoolID"
+		schoolID=$var
+		inputs "explain"	
+		explain=$var
+		echo $stuID,$stuName,$schoolID,$explain >> StuInfo
+		;;
+	c )
+		echo 请为StuscoreInfo添加记录
+		echo 学号 学生姓名 科目名称 成绩 说明（none，final,makeup）
+		inputs "stuID"
+		stuID=$var
+		inputs "stuName"
+		stuName=$var
+		inputs "subject"
+		subject=$var
+		inputs "score"
+		score=$var
+		inputs "explain"
+		explain=$var
+		echo $stuID,$stuName,$subject,$score,$explain >> StuscoreInfo
+		;;
+
+esac
+		
+		echo -n 是否为此表继续添加记录\(y,n\)：
+		read response
+		case $response in
+			[yY] | [Yy][Ee][Ss] )
+				continue
+				;;
+			[nN] | [Nn][Oo] )
+				break
+				;;
+			* )
+				echo 输入错误,默认不再添加记录
+				break
+				;;
+		esac
+done

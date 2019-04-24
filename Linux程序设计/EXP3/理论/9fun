@@ -1,0 +1,15 @@
+#!/bin/sh
+
+addrecord(){
+	for rec in $*
+	do
+		echo $rec >> logfile
+	done
+}
+
+
+set first second
+addrecord first second
+echo logfile content
+cat logfile
+
